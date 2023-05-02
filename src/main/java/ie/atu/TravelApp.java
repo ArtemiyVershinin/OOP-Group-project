@@ -1,34 +1,40 @@
 package ie.atu;
 
+import java.util.Arrays;
 import java.util.Scanner;
+
+import static java.lang.System.*;
 
 public class TravelApp {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
-        System.out.print("Welcome to the Travel App");
-        System.out.println();
+        out.print("Welcome to the Travel App");
+        out.println();
 
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(in);
         String confirmation = "y";
 
         while (confirmation.equalsIgnoreCase("y")) {
-            System.out.print("Enter a region: ");
+            out.print("Enter a region: ");
             String TravelCode = sc.nextLine();
 
             Travel t = TravelDB.getTravel(TravelCode);
 
-            System.out.println();
+            out.println();
             if (t != null) {
-                System.out.println("Region" + t.toString());
-                System.out.println("Arena " + t.toString());
-                System.out.println("Details:  " +t.toString());
+                for (String s : Arrays.asList("Region", "Arena ", "Details:  ")) {
+                    out.println(s + t);
+                }
             } else {
-                System.out.println("No region matches this name.");
+                out.println("No region matches this name.");
             }
 
+            out.println("Would you like to retry or continue searching\n");
+            out.println("Please type y/n`   ` to retry or continue searching:  ");
+
             confirmation = sc.nextLine();
-            System.out.println();
+            out.println();
         }
     }
 }
