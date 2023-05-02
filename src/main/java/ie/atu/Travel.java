@@ -1,7 +1,5 @@
 package ie.atu;
 
-import
-
 public class Travel {
 
     private String region;
@@ -9,23 +7,22 @@ public class Travel {
     private String details;
     private String locationlink;
 
-    protected static int count =0;
+    protected static int count = 0;
 
-    public Travel(){
-        region ="";
-        arena="";
-        details="";
-        locationlink="";
+    public Travel() {
+        region = "";
+        arena = "";
+        details = "";
+        locationlink = "";
         count++;
-    }
-    public void setRegion(String region){this.region = region; }
-
-    public String getRegion() {
-        return region;
     }
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public String getRegion() {
+        return region;
     }
 
     public String getArena() {
@@ -59,7 +56,9 @@ public class Travel {
     public static void setCount(int count) {
         Travel.count = count;
     }
-    public String toString() {return details + "located"+ locationlink;}
 
-    public static int getCount(){return count; }
+    public String toString() {
+        return details + "located" + locationlink;
+    }
 }
+

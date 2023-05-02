@@ -2,31 +2,35 @@ package ie.atu;
 
 public class TravelDB {
 
-    public static Travel getTravel(String region) {
+    public static Travel getTravel(String travelCode) {
 
 
-        Travel myTravel = null;
-        if (region.equalsIgnoreCase("Ireland")) {
-            myTravel = new Travel();
-            myTravel.setRegion(region);
-            myTravel.setDetails("");
-            myTravel.setArena("");
-            myTravel.setLocationlink("");
+        Travel t = null;
 
-        } else if(region.equalsIgnoreCase("England")) {
-            myTravel = new Travel();
-            myTravel.setRegion(region);
-            myTravel.setDetails("");
-            myTravel.setArena("");
-            myTravel.setLocationlink("");
+        if (travelCode.equalsIgnoreCase("Ireland"))
+        {
+            Travel myTravel = new Travel();
+            myTravel.setRegion(travelCode);
+            myTravel.setDetails("Details pending\n");
+            myTravel.setArena("Arena pending\n");
+            myTravel.setLocationlink("Location pending\n");
+            t =myTravel;
 
-            } else if(region.equalsIgnoreCase("Amsterdam")){
-            myTravel = new Travel();
-            myTravel.setRegion(region);
-            myTravel.setDetails("");
-            myTravel.setArena("");
-            myTravel.setLocationlink("");
+        } else if(travelCode.equalsIgnoreCase("England")) {
+            Travel myTravel = new Travel();
+            myTravel.setRegion(travelCode);
+            myTravel.setDetails("Hello\n");
+            myTravel.setArena("Yo\n");
+            myTravel.setLocationlink("Yo\n");
+
+            } else if(travelCode.equalsIgnoreCase("Amsterdam")){
+            Travel myTravel = new Travel();
+            myTravel.setRegion(travelCode);
+            myTravel.setDetails("Well\n");
+            myTravel.setArena("Here\n");
+            myTravel.setLocationlink("locate\n");
+            t = myTravel;
             }
-            return myTravel;
+            return t;
         }
 }

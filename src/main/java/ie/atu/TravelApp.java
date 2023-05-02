@@ -2,9 +2,6 @@ package ie.atu;
 
 import java.util.Scanner;
 
-
-import javax.swing.plaf.synth.Region;
-
 public class TravelApp {
 
     public static void main(String args[]) {
@@ -15,28 +12,24 @@ public class TravelApp {
         Scanner sc = new Scanner(System.in);
         String confirmation = "y";
 
-        while (confirmation.equalsIgnoreCase("y")){
-            System.out.print("Enter region: ");
-            String region = sc.nextLine();
+        while (confirmation.equalsIgnoreCase("y")) {
+            System.out.print("Enter a region: ");
+            String TravelCode = sc.nextLine();
 
-            Travel p = TravelDB.getTravel((region));
+            Travel t = TravelDB.getTravel(TravelCode);
+
+            System.out.println();
+            if (t != null) {
+                System.out.println("Region" + t.toString());
+                System.out.println("Arena " + t.toString());
+                System.out.println("Details:  " +t.toString());
+            } else {
+                System.out.println("No region matches this name.");
+            }
+
+            confirmation = sc.nextLine();
+            System.out.println();
         }
-        String region = sc.nextLine();
-
-        Travel yourTravel = TravelDB.getTravel(region);
-
-        System.out.println();
-        if (p !=null) {
-            System.out.println("Region" + p.toString());
-            System.out.println("Arena " + p.regionCode());
-            System.out.println("Details:   " + yourTravel.getDetails());
-        }else {
-            System.out.println("No region matches this name.");
-        }
-
-        System.out.println("Keep Searching ? (y/n: ");
-        confirmation = sc.nextLine();
-        System.out.println();
     }
-    sc.close();
 }
+
