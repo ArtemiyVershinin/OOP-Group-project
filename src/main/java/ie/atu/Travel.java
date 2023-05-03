@@ -32,7 +32,7 @@ public class Travel {
     }
 
     public void Description() {
-        float price = 15;
+        double price = 15.00;
         System.out.println("Region is: " + this.region + "Arena is: " + this.arena + "Details: " + this.details + price);
     }
 

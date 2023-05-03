@@ -22,6 +22,7 @@ public class TravelApp extends Travel{
             Travel t = TravelDB.getTravel(TravelCode);
 
 
+
             Travel Amsterdam = new Travel("\n", "8pm - 3rd Avenue\n", "Pier's Club\n" );
             Amsterdam.Description();
 
