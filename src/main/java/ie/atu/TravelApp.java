@@ -2,41 +2,62 @@ package ie.atu;
 
 import java.util.Scanner;
 
-
-import javax.swing.plaf.synth.Region;
+import static java.lang.System.in;
+import static java.lang.System.out;
 
 public class TravelApp {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
-        System.out.print("Welcome to the Travel App");
-        System.out.println();
+        out.print("Welcome to the Travel App");
+        out.println();
 
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(in);
         String confirmation = "y";
 
-        while (confirmation.equalsIgnoreCase("y")){
-            System.out.print("Enter region: ");
-            String region = sc.nextLine();
+        while (confirmation.equalsIgnoreCase("y")) {
+            out.print("Enter a region: ");
+            String TravelCode = sc.nextLine();
 
-            Travel p = TravelDB.getTravel((region));
+            Travel t = TravelDB.getTravel(TravelCode);
+            out.println();
+            /*
+            if (t != null) {
+                for (String s : Arrays.asList("Region: ", "Arena: ", "Details: ")) {
+                    out.println(s);
+                    String
+
+                }
+            }
+
+             */
+
+            if (t != null) {
+                out.println("Region: " + t.getRegion());
+                out.println("Arena: " + t.getArena());
+                out.println("Details: " + t.getDetails());
+                out.println("Price: "+ t.getPrice());
+                out.println("Link: "+ t.getLink());
+            }
+                else {
+                    out.println("No region matches this name.");
+                }
+
+                out.println("\nWould you like to retry or continue searching\n");
+                out.println("Please type `y/n` to retry or continue searching:  ");
+
+                confirmation = sc.nextLine();
+                out.println();
+
+
         }
-        String region = sc.nextLine();
+        /*
+        Access Event = new Access(" \n", "Pier\n", "\n");
+        Event.Description();
 
-        Travel yourTravel = TravelDB.getTravel(region);
 
-        System.out.println();
-        if (p !=null) {
-            System.out.println("Region" + p.toString());
-            System.out.println("Arena " + p.regionCode());
-            System.out.println("Details:   " + yourTravel.getDetails());
-        }else {
-            System.out.println("No region matches this name.");
-        }
-
-        System.out.println("Keep Searching ? (y/n: ");
-        confirmation = sc.nextLine();
-        System.out.println();
+         */
     }
-    sc.close();
+
 }
+

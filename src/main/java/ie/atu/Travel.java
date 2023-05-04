@@ -1,65 +1,57 @@
 package ie.atu;
 
-import
+import static java.lang.System.out;
 
 public class Travel {
-
     private String region;
     private String arena;
     private String details;
-    private String locationlink;
+    private String price;
+    private String link;
 
-    protected static int count =0;
-
-    public Travel(){
-        region ="";
-        arena="";
-        details="";
-        locationlink="";
-        count++;
+    public Travel(String region, String arena, String details, String price,String link){
+        this.region = region;
+        this.arena = arena;
+        this.details = details;
+        this.price = price;
+        this.link = link;
     }
-    public void setRegion(String region){this.region = region; }
-
-    public String getRegion() {
+    public String getRegion(){
         return region;
     }
-
+    public String getArena(){
+        return arena;
+    }
+    public String getDetails(){
+        return details;
+    }
+    public String getPrice(){
+        return price;
+    }
+    public String getLink() {
+        return link;
+    }
+/*
     public void setRegion(String region) {
         this.region = region;
     }
-
-    public String getArena() {
-        return arena;
-    }
-
     public void setArena(String arena) {
         this.arena = arena;
     }
-
-    public String getDetails() {
-        return details;
-    }
-
     public void setDetails(String details) {
         this.details = details;
     }
-
-    public String getLocationlink() {
-        return locationlink;
+    /*
+    public String toString() {
+        return details;
     }
 
-    public void setLocationlink(String locationlink) {
-        this.locationlink = locationlink;
+     */
+
+    public void Description() {
+        out.println("Region: " + this.region + "Arena: " + this.arena + "Details: " + this.details + this.price +"Price" + this.link +"Link");
     }
 
-    public static int getCount() {
-        return count;
-    }
 
-    public static void setCount(int count) {
-        Travel.count = count;
-    }
-    public String toString() {return details + "located"+ locationlink;}
-
-    public static int getCount(){return count; }
 }
+
