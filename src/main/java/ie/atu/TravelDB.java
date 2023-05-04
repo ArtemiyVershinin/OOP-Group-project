@@ -44,7 +44,7 @@ public class TravelDB {
             }
             else if(travelCode.equalsIgnoreCase("New Zealand"))
             {
-                t = new Travel(travelCode, "Valhalla", "Wellington","15 Euro", "https://www.google.com/maps/place/Valhalla/@-41.2948018,174.7727601,17z/data=!3m1!4b1!4m6!3m5!1s0x6d38afd8501c761f:0x84e374c82a6801b0!8m2!3d-41.2948018!4d174.7753404!16s%2Fg%2F11cm0cr_jl");
+                t = new Travel(travelCode, "Valhalla", "Wellington","69 Euro", "https://www.google.com/maps/place/Valhalla/@-41.2948018,174.7727601,17z/data=!3m1!4b1!4m6!3m5!1s0x6d38afd8501c761f:0x84e374c82a6801b0!8m2!3d-41.2948018!4d174.7753404!16s%2Fg%2F11cm0cr_jl");
             }
 
             return t;
