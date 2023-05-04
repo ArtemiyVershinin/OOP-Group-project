@@ -1,15 +1,15 @@
 package ie.atu;
 
-import java.util.ArrayList;
-
 import static java.lang.System.out;
 
 public class Access extends Travel{
 
     private double price;
-    public Access(String region, String arena, String details, double price){
-        super(region, arena, details);
+    private String link;
+    public Access(String region, String arena, String details, double price, String link){
+        super(region, arena, details, "Price", "Link");
         this.price = price;
+        this.link = link;
     }
     /*
     public void setRegion(String region) {

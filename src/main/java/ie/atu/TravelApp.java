@@ -1,9 +1,9 @@
 package ie.atu;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-import static java.lang.System.*;
+import static java.lang.System.in;
+import static java.lang.System.out;
 
 public class TravelApp {
 
@@ -36,6 +36,8 @@ public class TravelApp {
                 out.println("Region: " + t.getRegion());
                 out.println("Arena: " + t.getArena());
                 out.println("Details: " + t.getDetails());
+                out.println("Price: "+ t.getPrice());
+                out.println("Link: "+ t.getLink());
             }
                 else {
                     out.println("No region matches this name.");
