@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import static java.lang.System.*;
 
-public class TravelApp extends Travel{
+public class TravelApp {
 
     public static void main(String[] args) {
 
@@ -20,33 +20,41 @@ public class TravelApp extends Travel{
             String TravelCode = sc.nextLine();
 
             Travel t = TravelDB.getTravel(TravelCode);
-
-
-
-            Travel Amsterdam = new Travel("\n", "8pm - 3rd Avenue\n", "Pier's Club\n" );
-            Amsterdam.Description();
-
-
             out.println();
+            /*
             if (t != null) {
                 for (String s : Arrays.asList("Region: ", "Arena: ", "Details: ")) {
                     out.println(s);
+                    String
+
                 }
-            } else {
-                out.println("No region matches this name.");
             }
 
-            out.println("\nWould you like to retry or continue searching\n");
-            out.println("Please type `y/n` to retry or continue searching:  ");
+             */
 
-            confirmation = sc.nextLine();
-            out.println();
+            if (t != null) {
+                out.println("Region: " + t.getRegion());
+                out.println("Arena: " + t.getArena());
+                out.println("Details: " + t.getDetails());
+            }
+                else {
+                    out.println("No region matches this name.");
+                }
+
+                out.println("\nWould you like to retry or continue searching\n");
+                out.println("Please type `y/n` to retry or continue searching:  ");
+
+                confirmation = sc.nextLine();
+                out.println();
+
 
         }
+        /*
+        Access Event = new Access(" \n", "Pier\n", "\n");
+        Event.Description();
 
 
-
-
+         */
     }
 
 }
